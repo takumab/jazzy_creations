@@ -1,0 +1,43 @@
+<div class="row">
+  <%= form_for(@card, :html => { class: "col s12" }) do |f| %>
+    <% if @card.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@card.errors.count, "error") %>
+                                    prohibited this card from being saved:</h2>
+        <ul>
+          <% @card.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.text_field :title, class: "validate", id: "title", placeholder: "Title" %>
+        <%= f.label :title %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.text_field :image_url, class: "validate", id: "image", placeholder: "Image url" %>
+        <%= f.label :image_url %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.text_field :description, class: "validate", id: "description", placeholder: "Description" %>
+        <%= f.label :description %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.text_field :price, class: "validate", id: "price", placeholder: "Price" %>
+        <%= f.label :price %>
+      </div>
+    </div>
+    <div class="row">
+      <%= link_to 'Submit', root_path, class: "waves-effect waves-light btn" %>
+    </div>
+  <% end %>
+</div>
