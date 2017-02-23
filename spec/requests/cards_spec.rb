@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Cards', type: :request do
   # Initialize test data
-  let!(:cards) { create( :card) }
-  let(:card_id) { cards.first.id }
+  let!(:cards) { build_list(:card, 10) }
+  let!(:card_id) { cards.first.id }
 
   # Test suite for GET /cards
   describe 'GET /' do
@@ -16,7 +16,7 @@ RSpec.describe 'Cards', type: :request do
       end
 
       it 'returns all cards' do
-        expect(:card.size).to eq(10)
+        expect(:cards.size).to eq(10)
       end
     end
   end
