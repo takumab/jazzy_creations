@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
+
   def index
     @cards = Card.all
   end
@@ -24,9 +25,16 @@ class CardsController < ApplicationController
   end
 
   def update
+    if @card.update(card_params)
+      redirect_to 'show'
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @card.destroy
+    redirect_to card_url, notice: 'Product was successfully deleted!'
   end
 
   private
