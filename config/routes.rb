@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :cards
 
+  resources :orders, only: [:index, :show, :create, :destroy]
+
 end
