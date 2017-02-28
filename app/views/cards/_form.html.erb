@@ -20,8 +20,7 @@
     </div>
     <div class="row">
       <div class="input-field col s6">
-        <%= f.text_field :image_url, class: "validate", id: "image", placeholder: "Image url" %>
-        <%= f.label :image_url %>
+        <%= f.file_field :c_image, class: "validate", id: "image"%>
       </div>
     </div>
     <div class="row">
@@ -37,7 +36,7 @@
       </div>
     </div>
     <div class="row">
-      <%= link_to 'Submit', root_path, class: "waves-effect waves-light btn" %>
+      <%= link_to 'Submit', card_path(@card), class: "waves-effect waves-light btn" %>
     </div>
   <% end %>
 </div>

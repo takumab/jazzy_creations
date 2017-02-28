@@ -24,9 +24,16 @@ class CardsController < ApplicationController
   end
 
   def update
+    if @card.update(card_params)
+      redirect_to @card
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @card.destroy
+    redirect_to cards_url, notice: "Card was deleted."
   end
 
   private
@@ -36,6 +43,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:title, :image_url, :description, :price)
+    params.require(:card).permit(:title, :image_url, :description, :price, :c_image)
   end
 end
