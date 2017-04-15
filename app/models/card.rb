@@ -4,7 +4,6 @@ class Card < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :image_url, presence: true
   validates :price, presence: true
   validates_attachment_content_type :c_image, content_type: /\Aimage\/.*\z/
 
