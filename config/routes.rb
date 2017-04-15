@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'cards#index'
+  root 'static_pages#welcome'
+
 
   devise_for :users
 
