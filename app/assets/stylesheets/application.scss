@@ -14,3 +14,23 @@
  *= require_self
  */
  @import "materialize";
+
+  
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+
+footer.page-footer {
+  background: #5C1E1B;
+  .container .foot-links a{
+    color: #CFCF7C;
+  }
+}
